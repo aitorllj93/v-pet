@@ -1,0 +1,200 @@
+
+
+* {
+  font-family: "Pixel Digivolve Italic" Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body { 
+  margin: 0; 
+  padding: 0;
+}
+
+#watch {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+
+  flex-direction: column;
+  justify-content: flex-end; 
+  align-items: center; 
+
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+
+  --gradient-step-1: 65%;
+  --gradient-step-1-color: #000;
+  --gradient-step-2: 85%;
+  --gradient-step-2-color: rgba(0,0,0,0.6);
+  --gradient-step-3: 90%;
+  --gradient-step-3-color: rgba(0,0,0,0.4);
+  --gradient-step-4: 100%;
+  --gradient-step-4-color: rgba(0,0,0,0);
+
+  /* mask-image:
+    linear-gradient(
+      to left,
+      var(--gradient-step-1-color) var( --gradient-step-1),    
+      var(--gradient-step-2-color) var( --gradient-step-2),    
+      var(--gradient-step-3-color) var( --gradient-step-3),    
+      var(--gradient-step-4-color) var( --gradient-step-4)
+    ),
+    linear-gradient(
+      to right,
+      var(--gradient-step-1-color) var( --gradient-step-1),    
+      var(--gradient-step-2-color) var( --gradient-step-2),    
+      var(--gradient-step-3-color) var( --gradient-step-3),    
+      var(--gradient-step-4-color) var( --gradient-step-4)
+    ),
+    linear-gradient(
+      to top,
+      var(--gradient-step-1-color) var( --gradient-step-1),    
+      var(--gradient-step-2-color) var( --gradient-step-2),    
+      var(--gradient-step-3-color) var( --gradient-step-3),    
+      var(--gradient-step-4-color) var( --gradient-step-4)
+    ),
+    linear-gradient(
+      to bottom,
+      var(--gradient-step-1-color) var( --gradient-step-1),    
+      var(--gradient-step-2-color) var( --gradient-step-2),    
+      var(--gradient-step-3-color) var( --gradient-step-3),    
+      var(--gradient-step-4-color) var( --gradient-step-4)
+    );
+
+  -webkit-mask-composite: intersect;
+  mask-composite: intersect; */
+}
+
+#watch.filter-green::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(140, 160, 110, 0.28);
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+#watch canvas {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  display: block;
+  /* border: 1px solid red; */
+}
+
+#watch.filter-lcd canvas {
+  filter: grayscale(1) contrast(1.6) brightness(0.95);
+}
+
+#watch.filter-green canvas {
+  filter: grayscale(1) contrast(1.4) brightness(0.9) sepia(0.4) hue-rotate(30deg) saturate(0.8);
+}
+
+#watch.filter-dark canvas {
+  filter: grayscale(1) contrast(1.8) brightness(0.75) sepia(0.3) hue-rotate(20deg);
+}
+
+/* Pet view (canvas) wrapper */
+.watch-pet-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.watch-pet-view-hidden {
+  display: none !important;
+}
+
+/* Egg carousel when no pet selected */
+.watch-carousel {
+  display: none;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.watch-carousel.watch-carousel-visible {
+  display: flex;
+}
+
+.watch-carousel-arrow {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--vscode-button-border, transparent);
+  border-radius: 4px;
+  background: var(--vscode-button-secondaryBackground);
+  color: var(--vscode-button-secondaryForeground);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    width: 18px;
+    height: 18px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    transform: rotate(-90deg);
+  }
+}
+
+.watch-carousel-arrow:hover {
+  background: var(--vscode-button-secondaryHoverBackground);
+}
+
+.watch-carousel-center {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.watch-carousel-center:hover {
+  background: var(--vscode-toolbar-hoverBackground, rgba(255, 255, 255, 0.08));
+}
+
+
+.sprite-shell {
+	--shellSize: 48px;
+	--spriteSize: 18px;
+	width: var(--shellSize);
+	height: var(--shellSize);
+	display: grid;
+	place-items: center;
+	border-radius: 10px;
+	background: var(--bg);
+	overflow: hidden;
+	position: relative;
+}
+
+.sprite {
+	width: var(--spriteSize);
+	height: var(--spriteSize);
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+	background-repeat: no-repeat;
+	background-size: calc(var(--spriteSize) * 2) calc(var(--spriteSize) * 2);
+	transform: scale(2.5);
+	transform-origin: center;
+}

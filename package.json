@@ -1,0 +1,270 @@
+{
+  "name": "d-code",
+  "displayName": "D-CODE - Virtual Coding Companion",
+  "description": "Raise a small Virtual Pet inside your editor and let it accompany you while you code.",
+  "version": "0.1.0",
+  "publisher": "aitorllj93",
+  "author": {
+    "name": "Aitor Llamas Jiménez",
+    "email": "aitorllj93@gmail.com",
+    "url": "https://aitorllamas.com"
+  },
+  "galleryBanner": {
+    "color": "#322166",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/aitorllj93/d-code#readme",
+  "qna": "marketplace",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aitorllj93/d-code.git"
+  },
+  "pricing": "Free",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/aitorllj93/d-code/issues",
+    "email": "aitorllj93@gmail.com"
+  },
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "keywords": [
+    "digital-pet",
+    "v-pet",
+    "companion"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "icon": "./static/icon.png",
+  "main": "./dist/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.109.0",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.56.1",
+    "eslint": "^10.1.0",
+    "esbuild": "^0.27.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.3"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "d-code.openTree",
+        "title": "D-CODE: Show Evolution Tree"
+      },
+      {
+        "command": "d-code.openEncyclopedia",
+        "title": "D-CODE: Show Encyclopedia"
+      },
+      {
+        "command": "d-code.resetProgress",
+        "title": "D-CODE: Reset all progress"
+      },
+      {
+        "command": "d-code.chooseEgg",
+        "title": "D-CODE: Choose Egg"
+      }
+    ],
+    "configuration": {
+      "title": "D-Code",
+      "properties": {
+        "d-code.lcdFilter": {
+          "type": "string",
+          "scope": "window",
+          "enum": ["none", "lcd", "green", "dark"],
+          "default": "none",
+          "description": "LCD filter applied to the pet screen.",
+          "enumDescriptions": [
+            "No filter",
+            "Classic grey LCD Digivice screen",
+            "Green monochrome LCD style",
+            "Dark high-contrast LCD style"
+          ]
+        },
+        "d-code.excludePets": {
+          "type": "array",
+          "scope": "window",
+          "items": {
+            "type": "number"
+          },
+          "default": [],
+          "description": "Internal pet IDs that should never appear. Examples: 70 for Numemon line, 20 for Chuumon/Sukamon, 412 for Mamemon."
+        },
+        "d-code.randomEggs": {
+          "type": "boolean",
+          "scope": "window",
+          "default": false,
+          "description": "Whether to receive a random egg instead of picking one"
+        },
+        "d-code.discoverMode": {
+          "type": "boolean",
+          "scope": "window",
+          "default": false,
+          "description": "Prioritise evolutions the user has not discovered yet."
+        },
+        "d-code.experience.evolutionConditions.baby1": {
+          "type": "integer",
+          "scope": "window",
+          "default": 100,
+          "description": "The amount of experience needed to evolve to Level 1 (Baby I)"
+        },
+        "d-code.experience.evolutionConditions.baby2": {
+          "type": "integer",
+          "scope": "window",
+          "default": 200,
+          "description": "The amount of experience needed to evolve to Level 2 (Baby II)"
+        },
+        "d-code.experience.evolutionConditions.child": {
+          "type": "integer",
+          "scope": "window",
+          "default": 250,
+          "description": "The amount of experience needed to evolve to Level 3 (Child)"
+        },
+        "d-code.experience.evolutionConditions.adult": {
+          "type": "integer",
+          "scope": "window",
+          "default": 400,
+          "description": "The amount of experience needed to evolve to Level 4 (Adult)"
+        },
+        "d-code.experience.evolutionConditions.perfect": {
+          "type": "integer",
+          "scope": "window",
+          "default": 700,
+          "description": "The amount of experience needed to evolve to Level 5 (Perfect)"
+        },
+        "d-code.experience.evolutionConditions.ultimate": {
+          "type": "integer",
+          "scope": "window",
+          "default": 1000,
+          "description": "The amount of experience needed to evolve to Level 6 (Ultimate)"
+        },
+        "d-code.experience.evolutionConditions.ultimate_plus": {
+          "type": "integer",
+          "scope": "window",
+          "default": 1200,
+          "description": "The amount of experience needed to evolve to Level 7 (Ultimate+)"
+        },
+        "d-code.experience.multipliers.active": {
+          "type": "integer",
+          "scope": "window",
+          "default": 2,
+          "description": "The amount of experience to receive by being active."
+        },
+        "d-code.experience.multipliers.errorRemoved": {
+          "type": "integer",
+          "scope": "window",
+          "default": 15,
+          "description": "The amount of experience to receive by removing errors."
+        },
+        "d-code.experience.multipliers.warningRemoved": {
+          "type": "integer",
+          "scope": "window",
+          "default": 5,
+          "description": "The amount of experience to receive by removing warnings."
+        },
+        "d-code.experience.multipliers.cursorStep": {
+          "type": "integer",
+          "scope": "window",
+          "default": 1,
+          "description": "The amount of experience to receive by moving the cursor."
+        },
+        "d-code.experience.multipliers.fileChange": {
+          "type": "integer",
+          "scope": "window",
+          "default": 2,
+          "description": "The amount of experience to receive by changing the active file."
+        },
+        "d-code.experience.multipliers.gitCommit": {
+          "type": "integer",
+          "scope": "window",
+          "default": 50,
+          "description": "The amount of experience to receive by running git commits."
+        },
+        "d-code.experience.multipliers.gitBranch": {
+          "type": "integer",
+          "scope": "window",
+          "default": 30,
+          "description": "The amount of experience to receive by running git branches."
+        },
+        "d-code.experience.multipliers.gitMerge": {
+          "type": "integer",
+          "scope": "window",
+          "default": 80,
+          "description": "The amount of experience to receive by running git merges."
+        },
+        "d-code.experience.multipliers.fileSave": {
+          "type": "integer",
+          "scope": "window",
+          "default": 3,
+          "description": "The amount of experience to receive by saving a file."
+        },
+        "d-code.experience.multipliers.fileSaveStreak": {
+          "type": "integer",
+          "scope": "window",
+          "default": 10,
+          "description": "The bonus experience to receive by saving a file after longer period."
+        },
+        "d-code.experience.multipliers.terminalCommand": {
+          "type": "integer",
+          "scope": "window",
+          "default": 5,
+          "description": "The amount of experience to receive by running a command on the integrated terminal."
+        },
+        "d-code.experience.multipliers.terminalBuildOrTest": {
+          "type": "integer",
+          "scope": "window",
+          "default": 20,
+          "description": "The amount of experience to receive by running a build or test command on the integrated terminal."
+        },
+        "d-code.experience.multipliers.terminalTestsPassed": {
+          "type": "integer",
+          "scope": "window",
+          "default": 40,
+          "description": "The amount of experience to receive by passing the tests on the integrated terminal."
+        },
+        "d-code.experience.multipliers.typing": {
+          "type": "integer",
+          "scope": "window",
+          "default": 1,
+          "description": "The amount of experience to receive by typing on the editor."
+        },
+        "d-code.experience.multipliers.lines": {
+          "type": "integer",
+          "scope": "window",
+          "default": 5,
+          "description": "The amount of experience to receive by adding lines on the editor."
+        },
+        "d-code.experience.multipliers.typingStreak": {
+          "type": "integer",
+          "scope": "window",
+          "default": 20,
+          "description": "The amount of experience to receive on typing streaks."
+        }
+      }
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "d-code.watchView",
+          "name": "D-CODE",
+          "type": "webview",
+          "icon": ""
+        }
+      ]
+    }
+  }
+}
