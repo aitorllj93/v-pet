@@ -2,7 +2,7 @@
   "name": "v-pet",
   "displayName": "V-PET - Virtual Coding Companion",
   "description": "Raise a small Virtual Pet inside your editor and let it accompany you while you code.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "aitorllj93",
   "author": {
     "name": "Aitor Llamas Jiménez",
@@ -26,7 +26,7 @@
     "email": "aitorllj93@gmail.com"
   },
   "engines": {
-    "vscode": "^1.109.0"
+    "vscode": "^1.105.0"
   },
   "keywords": [
     "digital-pet",
@@ -52,7 +52,7 @@
     "lint": "eslint src"
   },
   "devDependencies": {
-    "@types/vscode": "^1.109.0",
+    "@types/vscode": "^1.105.0",
     "@types/node": "22.x",
     "typescript-eslint": "^8.56.1",
     "eslint": "^10.1.0",
