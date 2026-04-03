@@ -1,7 +1,7 @@
 import { ADULT, BABY_1, BABY_2, CHILD, EGG, PERFECT, PetLevel, ULTIMATE, ULTIMATE_PLUS } from "./types";
 
 
-export const NAMESPACE = 'd-code';
+export const NAMESPACE = 'v-pet';
 
 export const CONFIG_LCD_FILTER = 'lcdFilter';
 export const CONFIG_EXCLUDE_PETS = 'excludePets';

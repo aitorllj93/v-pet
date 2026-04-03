@@ -1,4 +1,4 @@
-# D-CODE: Virtual Coding Companion
+# V-PET: Virtual Coding Companion
 
 <div align="center">
 
@@ -14,7 +14,7 @@ Bring a Virtual Pet into your editor. Your coding companion from the Digital Wor
 
 ## Features
 
-Raise a small Virtual Pet inside your editor and let it accompany you! D-CODE tightly integrates with your VS Code workflow to create an immersive, rewarding experience out of your daily coding tasks.
+Raise a small Virtual Pet inside your editor and let it accompany you! V-PET tightly integrates with your VS Code workflow to create an immersive, rewarding experience out of your daily coding tasks.
 
 - **Raise your Companion:** Your daily coding tasks feed, train, and raise your digital partner.
 - **Earn Experience Through Coding:** Every action counts! Gain XP by:
@@ -30,16 +30,16 @@ Raise a small Virtual Pet inside your editor and let it accompany you! D-CODE ti
 
 ## Commands
 
-D-CODE provides several commands accessible through the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`):
+V-PET provides several commands accessible through the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`):
 
-- `D-CODE: Choose Egg` - Start your journey by selecting a new egg!
-- `D-CODE: Show Evolution Tree` - View the evolution paths and monitor your progress.
-- `D-CODE: Show Encyclopedia` - Browse all the companions you've discovered so far.
-- `D-CODE: Reset all progress` - Erase your saved data to start from scratch.
+- `V-PET: Choose Egg` - Start your journey by selecting a new egg!
+- `V-PET: Show Evolution Tree` - View the evolution paths and monitor your progress.
+- `V-PET: Show Encyclopedia` - Browse all the companions you've discovered so far.
+- `V-PET: Reset all progress` - Erase your saved data to start from scratch.
 
 ## Configuration
 
-D-CODE is highly customizable, putting you in control of your companion's progression. Adjust the experience yield for each activity to match your coding pace!
+V-PET is highly customizable, putting you in control of your companion's progression. Adjust the experience yield for each activity to match your coding pace!
 
 - **Visual Settings:** LCD Filters, Exclude Pets
 - **Progression Adjustments:** Fine-tune the XP required for each evolutionary stage.
@@ -57,4 +57,4 @@ No rights are granted over any third-party intellectual property.
 
 ## License
 
-[Apache-2.0 license](https://github.com/aitorllj93/d-code/blob/main/LICENSE)
+[Apache-2.0 license](https://github.com/aitorllj93/v-pet/blob/main/LICENSE)

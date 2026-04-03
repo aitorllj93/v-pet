@@ -1,6 +1,6 @@
 {
-  "name": "d-code",
-  "displayName": "D-CODE - Virtual Coding Companion",
+  "name": "v-pet",
+  "displayName": "V-PET - Virtual Coding Companion",
   "description": "Raise a small Virtual Pet inside your editor and let it accompany you while you code.",
   "version": "0.1.0",
   "publisher": "aitorllj93",
@@ -13,16 +13,16 @@
     "color": "#322166",
     "theme": "dark"
   },
-  "homepage": "https://github.com/aitorllj93/d-code#readme",
+  "homepage": "https://github.com/aitorllj93/v-pet#readme",
   "qna": "marketplace",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aitorllj93/d-code.git"
+    "url": "https://github.com/aitorllj93/v-pet.git"
   },
   "pricing": "Free",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/aitorllj93/d-code/issues",
+    "url": "https://github.com/aitorllj93/v-pet/issues",
     "email": "aitorllj93@gmail.com"
   },
   "engines": {
@@ -63,26 +63,26 @@
   "contributes": {
     "commands": [
       {
-        "command": "d-code.openTree",
-        "title": "D-CODE: Show Evolution Tree"
+        "command": "v-pet.openTree",
+        "title": "V-PET: Show Evolution Tree"
       },
       {
-        "command": "d-code.openEncyclopedia",
-        "title": "D-CODE: Show Encyclopedia"
+        "command": "v-pet.openEncyclopedia",
+        "title": "V-PET: Show Encyclopedia"
       },
       {
-        "command": "d-code.resetProgress",
-        "title": "D-CODE: Reset all progress"
+        "command": "v-pet.resetProgress",
+        "title": "V-PET: Reset all progress"
       },
       {
-        "command": "d-code.chooseEgg",
-        "title": "D-CODE: Choose Egg"
+        "command": "v-pet.chooseEgg",
+        "title": "V-PET: Choose Egg"
       }
     ],
     "configuration": {
-      "title": "D-Code",
+      "title": "V-PET",
       "properties": {
-        "d-code.lcdFilter": {
+        "v-pet.lcdFilter": {
           "type": "string",
           "scope": "window",
           "enum": ["none", "lcd", "green", "dark"],
@@ -95,7 +95,7 @@
             "Dark high-contrast LCD style"
           ]
         },
-        "d-code.excludePets": {
+        "v-pet.excludePets": {
           "type": "array",
           "scope": "window",
           "items": {
@@ -104,151 +104,151 @@
           "default": [],
           "description": "Internal pet IDs that should never appear. Examples: 70 for Numemon line, 20 for Chuumon/Sukamon, 412 for Mamemon."
         },
-        "d-code.randomEggs": {
+        "v-pet.randomEggs": {
           "type": "boolean",
           "scope": "window",
           "default": false,
           "description": "Whether to receive a random egg instead of picking one"
         },
-        "d-code.discoverMode": {
+        "v-pet.discoverMode": {
           "type": "boolean",
           "scope": "window",
           "default": false,
           "description": "Prioritise evolutions the user has not discovered yet."
         },
-        "d-code.experience.evolutionConditions.baby1": {
+        "v-pet.experience.evolutionConditions.baby1": {
           "type": "integer",
           "scope": "window",
           "default": 100,
           "description": "The amount of experience needed to evolve to Level 1 (Baby I)"
         },
-        "d-code.experience.evolutionConditions.baby2": {
+        "v-pet.experience.evolutionConditions.baby2": {
           "type": "integer",
           "scope": "window",
           "default": 200,
           "description": "The amount of experience needed to evolve to Level 2 (Baby II)"
         },
-        "d-code.experience.evolutionConditions.child": {
+        "v-pet.experience.evolutionConditions.child": {
           "type": "integer",
           "scope": "window",
           "default": 250,
           "description": "The amount of experience needed to evolve to Level 3 (Child)"
         },
-        "d-code.experience.evolutionConditions.adult": {
+        "v-pet.experience.evolutionConditions.adult": {
           "type": "integer",
           "scope": "window",
           "default": 400,
           "description": "The amount of experience needed to evolve to Level 4 (Adult)"
         },
-        "d-code.experience.evolutionConditions.perfect": {
+        "v-pet.experience.evolutionConditions.perfect": {
           "type": "integer",
           "scope": "window",
           "default": 700,
           "description": "The amount of experience needed to evolve to Level 5 (Perfect)"
         },
-        "d-code.experience.evolutionConditions.ultimate": {
+        "v-pet.experience.evolutionConditions.ultimate": {
           "type": "integer",
           "scope": "window",
           "default": 1000,
           "description": "The amount of experience needed to evolve to Level 6 (Ultimate)"
         },
-        "d-code.experience.evolutionConditions.ultimate_plus": {
+        "v-pet.experience.evolutionConditions.ultimate_plus": {
           "type": "integer",
           "scope": "window",
           "default": 1200,
           "description": "The amount of experience needed to evolve to Level 7 (Ultimate+)"
         },
-        "d-code.experience.multipliers.active": {
+        "v-pet.experience.multipliers.active": {
           "type": "integer",
           "scope": "window",
           "default": 2,
           "description": "The amount of experience to receive by being active."
         },
-        "d-code.experience.multipliers.errorRemoved": {
+        "v-pet.experience.multipliers.errorRemoved": {
           "type": "integer",
           "scope": "window",
           "default": 15,
           "description": "The amount of experience to receive by removing errors."
         },
-        "d-code.experience.multipliers.warningRemoved": {
+        "v-pet.experience.multipliers.warningRemoved": {
           "type": "integer",
           "scope": "window",
           "default": 5,
           "description": "The amount of experience to receive by removing warnings."
         },
-        "d-code.experience.multipliers.cursorStep": {
+        "v-pet.experience.multipliers.cursorStep": {
           "type": "integer",
           "scope": "window",
           "default": 1,
           "description": "The amount of experience to receive by moving the cursor."
         },
-        "d-code.experience.multipliers.fileChange": {
+        "v-pet.experience.multipliers.fileChange": {
           "type": "integer",
           "scope": "window",
           "default": 2,
           "description": "The amount of experience to receive by changing the active file."
         },
-        "d-code.experience.multipliers.gitCommit": {
+        "v-pet.experience.multipliers.gitCommit": {
           "type": "integer",
           "scope": "window",
           "default": 50,
           "description": "The amount of experience to receive by running git commits."
         },
-        "d-code.experience.multipliers.gitBranch": {
+        "v-pet.experience.multipliers.gitBranch": {
           "type": "integer",
           "scope": "window",
           "default": 30,
           "description": "The amount of experience to receive by running git branches."
         },
-        "d-code.experience.multipliers.gitMerge": {
+        "v-pet.experience.multipliers.gitMerge": {
           "type": "integer",
           "scope": "window",
           "default": 80,
           "description": "The amount of experience to receive by running git merges."
         },
-        "d-code.experience.multipliers.fileSave": {
+        "v-pet.experience.multipliers.fileSave": {
           "type": "integer",
           "scope": "window",
           "default": 3,
           "description": "The amount of experience to receive by saving a file."
         },
-        "d-code.experience.multipliers.fileSaveStreak": {
+        "v-pet.experience.multipliers.fileSaveStreak": {
           "type": "integer",
           "scope": "window",
           "default": 10,
           "description": "The bonus experience to receive by saving a file after longer period."
         },
-        "d-code.experience.multipliers.terminalCommand": {
+        "v-pet.experience.multipliers.terminalCommand": {
           "type": "integer",
           "scope": "window",
           "default": 5,
           "description": "The amount of experience to receive by running a command on the integrated terminal."
         },
-        "d-code.experience.multipliers.terminalBuildOrTest": {
+        "v-pet.experience.multipliers.terminalBuildOrTest": {
           "type": "integer",
           "scope": "window",
           "default": 20,
           "description": "The amount of experience to receive by running a build or test command on the integrated terminal."
         },
-        "d-code.experience.multipliers.terminalTestsPassed": {
+        "v-pet.experience.multipliers.terminalTestsPassed": {
           "type": "integer",
           "scope": "window",
           "default": 40,
           "description": "The amount of experience to receive by passing the tests on the integrated terminal."
         },
-        "d-code.experience.multipliers.typing": {
+        "v-pet.experience.multipliers.typing": {
           "type": "integer",
           "scope": "window",
           "default": 1,
           "description": "The amount of experience to receive by typing on the editor."
         },
-        "d-code.experience.multipliers.lines": {
+        "v-pet.experience.multipliers.lines": {
           "type": "integer",
           "scope": "window",
           "default": 5,
           "description": "The amount of experience to receive by adding lines on the editor."
         },
-        "d-code.experience.multipliers.typingStreak": {
+        "v-pet.experience.multipliers.typingStreak": {
           "type": "integer",
           "scope": "window",
           "default": 20,
@@ -259,8 +259,8 @@
     "views": {
       "explorer": [
         {
-          "id": "d-code.watchView",
-          "name": "D-CODE",
+          "id": "v-pet.watchView",
+          "name": "V-PET",
           "type": "webview",
           "icon": ""
         }

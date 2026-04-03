@@ -27,7 +27,7 @@ async function pickEgg(
   const eggs = petsManager.getEggs();
 
   if (eggs.length === 0) {
-    vscode.window.showErrorMessage('D-CODE: No eggs available to choose from.');
+    vscode.window.showErrorMessage('V-PET: No eggs available to choose from.');
     return;
   }
 
